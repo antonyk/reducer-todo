@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useReducer } from 'react';
 import './App.css';
+// components
+import Header from './Header'
+import TodoList from './TodoList'
+
+const todos = [
+  {id: 1, text: "first todo", completed: false},
+  {id: 2, text: "buy milk", completed: false},
+  {id: 3, text: "third todo", completed: false},
+]
+
+
+function todoReducer(state, action) {
+  return state
+}
+
 
 function App() {
+  // const [state, dispatch] = useReducer(todoReducer, todos)
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <TodoList items={todos} />
     </div>
   );
 }
